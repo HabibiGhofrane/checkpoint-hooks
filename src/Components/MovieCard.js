@@ -1,11 +1,16 @@
 import React from 'react'
 import {Card, Button} from 'react-bootstrap'
-
+import { Link } from 'react-router-dom';
 import '../App.css';
 import MovieRatingStar from '../Rating';
 
+
+
+
  const MovieCard = ({ movies }) => {
-    return (
+
+    return (  
+
         <div >
             <Card style={{ width: '18rem' }}>
                 <img className="MovieCardImg" variant="top" src={movies.image} alt="poster"  />
@@ -17,7 +22,7 @@ import MovieRatingStar from '../Rating';
                     <div className='starRating' >
                     <MovieRatingStar isMovieRating={true} movieRating= {movies.rating}/>
                     </div>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Link to ={`/description/${movies.id}`}><Button variant="primary">Go somewhere</Button></Link>
                 </Card.Body>
             </Card>
         </div>
